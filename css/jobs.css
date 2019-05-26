@@ -1,0 +1,80 @@
+
+    .btn-apply{
+        padding: 5%;
+        font-size: 18px;
+      }
+    .btn-apply-later{
+        color: #3ad18a !important;
+        border-color: #3ad18a !important;
+        padding: 5%;
+        font-size: 15px;
+     }
+    .tableJob{
+      left: 0px; width: 100%; height: 204px; font-size: 14px; vertical-align: middle; border-image-source: none;
+     }
+    .trJob{
+        font-size: 14px;
+     }
+    .tdJob{
+        text-align: left; font-family: Verdana;
+     }
+    .tdJob span{
+        text-align: left; font-family: Verdana; font-weight: bold;
+     }
+    .title a{
+        color:#4285f4; 
+     }
+    #container{
+      border-radius: 6px;
+      box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+      background: white;
+     }
+
+
+    .delete-row{
+        color: #e8e8e8;
+      }
+    .delete-row:hover{
+        color: #f44336;
+      }
+    .material-icons{
+        cursor: pointer;
+      }
+    .mdl-selectfield__label:after {
+        background-color: #3ad18a;
+      }
+
+    .dtp {
+        display: block;
+        opacity: 1;
+        visibility: visible;
+        transition: 0.6s all;
+      }
+
+    .dtp.hidden {
+        display: block;
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      /*.dtp-header,
+      .dtp-actual-num,
+      .dtp-picker-month,
+      .dtp-buttons {
+        display: none;
+      }*/
+
+    .dtp div.dtp-picker {
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .dtp table.dtp-picker-days tr>th {
+        font-weight: 400;
+        color: #ccc;
+    }
+    label b{
+        color: red;
+    }

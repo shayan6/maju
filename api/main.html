@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous">
+    </script>
+    <script type="text/javascript">     
+      $.get("link.html", function(data){
+        $( "#link" ).html( data );
+    });
+      $.get("script.html", function(data){
+        $( "#script" ).html( data );
+    });
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <div id='link'></div>  <!-- linked CSS -->
+    <style type="text/css">
+      .el-legend .legend-pin {
+         margin-right: 0.1rem;
+        margin-left: 0.7rem;
+      }
+      .el-tablo{
+        height: 200px;
+      }
+      .el-tablo:hover .value{
+
+        color: #fff;
+        transform: rotateY(360deg);
+        -webkit-transition: -webkit-transform 0.8s ease-in;
+        
+      }
+      .el-tablo:hover .label{
+
+        color: #fff;
+
+      }
+      .class1 {
+          cursor: pointer;
+          box-shadow: inset 0 0 0 0 #f37070;
+          -webkit-transition: all ease 0.8s;
+      }
+      .class1:hover {
+        box-shadow: inset 0 -300px 1px 0 #f37070;
+        color: #fff;
+    }
+      .class2 {
+          cursor: pointer;
+          box-shadow: inset 0 0 0 0 #4ecc48;
+          -webkit-transition: all ease 0.8s;
+      }
+      .class2:hover {
+        box-shadow: inset 0 -300px 1px 0 #4ecc48;
+        color: #fff;
+    }
+
+      .class3 {
+          cursor: pointer;
+          box-shadow: inset 0 0 0 0 #54a5f8;
+          -webkit-transition: all ease 0.8s;
+      }
+      .class3:hover {
+        box-shadow: inset 0 -300px 1px 0 #54a5f8;
+        color: #fff;
+    }
+
+      .class4 {
+          cursor: pointer;
+          box-shadow: inset 0 0 0 0 #fc9257;
+          -webkit-transition: all ease 0.8s;
+      }
+      .class4:hover {
+        box-shadow: inset 0 -300px 1px 0 #fc9257;
+        color: #fff;
+    }
+    #dashIcon{
+        speak: none;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        position: absolute;
+        font-size: 180px;
+        color: rgba(255, 255, 255, 0.3);
+        bottom: 15px;
+        right: 10px;
+    }
+    </style>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js" ></script>
+</head>
+<body>
+    <div class="all-wrapper menu-side">
+      <div class="layout-w">  
+        <div class="content-w">
+          <div class="content-box">
+            <div class="row">
+              <div class="col-sm-6">
+                <div style="box-shadow: 0px 0px 25px gray" class="animated bounceInDown">
+                  <div class="element-box el-tablo class1">
+                    <div class="label">
+                      KPI 
+                    </div>
+                    <div class="value">
+                      KPI
+                    </div>
+                    <div class="trending trending-up">
+                        <a href="snap-bar.html" style="color: white;"><span>Details<span></a><i class="os-icon os-icon-arrow-up2"></i>
+                        <i id="dashIcon" class="picons-thin-icon-thin-0401_graph_growth_money_stock_inflation"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+                <div class="col-sm-6">
+                  <div style="box-shadow: 0px 0px 25px gray; -webkit-animation-delay: 1s;" class="animated bounceInDown">
+                    <div class="element-box el-tablo class2">
+                      <div class="label">
+                        Portfolio Snapshot
+                      </div>
+                      <div class="value">
+                        Portfolio <br> Snapshot
+                      </div>
+                      <div class="trending trending-up">
+                          <a href="snap-bar.html" style="color: white;"><span>Details<span></a><i class="os-icon os-icon-arrow-up2"></i>
+                          <i id="dashIcon" class="picons-thin-icon-thin-0426_money_payment_dollars_coins_cash"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div style="box-shadow: 0px 0px 25px gray; -webkit-animation-delay: 2s;" class="animated bounceInLeft">
+                    <div class="element-box el-tablo class3">
+                      <div class="label">
+                        DISBURSEMENT Loan Sizes
+                      </div>
+                      <div class="value">
+                        Disbursment <br> Loan Sizes
+                      </div>
+                      <div class="trending trending-up">
+                          <a href="tez.html" style="color: white;"><span>Details<span></a><i class="os-icon os-icon-arrow-up2"></i>
+                          <i id="dashIcon" class="picons-thin-icon-thin-0419_payment_mobile_nfc_apple_pay_cashless"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="animated bounceInRight" style="box-shadow: 0px 0px 25px gray; -webkit-animation-delay: 2s;" >
+                    <div class="element-box el-tablo class4">
+                      <div class="label">
+                        Total Loans Taken
+                      </div>
+                      <div class="value">
+                        Heading
+                      </div>
+                      <div class="trending trending-up">
+                          <a href="../block-page.php" style="color: white;"><span>Details<span></a><i class="os-icon os-icon-arrow-up2"></i>
+                          <i id="dashIcon" class="picons-thin-icon-thin-0430_money_payment_dollar_coins_cash"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="animated bounceInUp" style="box-shadow: 0px 0px 25px gray; -webkit-animation-delay: 1s;" >
+                    <div class="element-box el-tablo class1">
+                      <div class="label">
+                        Total Loans Taken
+                      </div>
+                      <div class="value">
+                        Heading
+                      </div>
+                      <div class="trending trending-up">
+                          <a href="../block-page.php" style="color: white;"><span>Details<span></a><i class="os-icon os-icon-arrow-up2"></i>
+                          <i id="dashIcon" class="picons-thin-icon-thin-0655_like_heart_favorite_rating_love"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div style="box-shadow: 0px 0px 25px gray;" class="animated bounceInUp">
+                  <div class="element-box el-tablo class2">
+                    <div class="label">
+                      Total Loans Taken
+                    </div>
+                    <div class="value">
+                      Heading
+                    </div>
+                    <div class="trending trending-up">
+                        <a href="../block-page.php" style="color: white;"><span>Details<span></a><i class="os-icon os-icon-arrow-up2"></i>
+                        <i id="dashIcon" class="picons-thin-icon-thin-0363_network_connection_computer_folder"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+         </div>          
+        </div>
+      </div>
+      <div class="display-type"></div>
+    </div>
+    <?php 
+      include('script.html'); #linked JS
+    ?>
+    <script src="js/wow.min.js"></script>
+    <script>
+      $('.btn').addClass('animated slideInRight');
+    new WOW().init();
+    </script>
+</body>
+</html>

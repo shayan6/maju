@@ -1,0 +1,80 @@
+body {
+  padding: 0 !important;
+}
+body:before {
+  background: linear-gradient(to bottom right, #e65252, #047bf8);
+}
+/* Menu and header css ################################################ */
+
+.top-menu-secondary {
+  overflow: initial;
+}
+
+.menu-side-w .logo-w img {
+  width: 70%;
+}
+.menu-side-w ul.main-menu > li.has-sub-menu > a:before {
+  display: none;
+}
+.top-menu-secondary.color-scheme-dark {
+  background: #f05152 !important;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+.menu-and-user {
+  position: sticky;
+  top: 0;
+}
+.top-menu-secondary .logged-user-w .logged-user-menu {
+  background: #f05152 !important;
+}
+.auth-box-w .logo-w {
+  padding: 7%;
+}
+.content-panel {
+  position: fixed;
+  right: 0;
+}
+
+/*timeline css ########################################################*/
+.activity-boxes-w .activity-avatar {
+  margin-bottom: auto;
+  width: 70px;
+}
+.activity-boxes-w .activity-title {
+  font-size: 1rem !important;
+}
+@media only screen and (min-width: 1150px) {
+  .content-box .element-wrapper {
+    width: 70%;
+  }
+}
+
+/* pope;ome css ######################## */
+
+.rentals-list-w .filter-side {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 350px;
+  flex: 0 0 350px;
+}
+
+.pipeline-item:last-child {
+  margin-bottom: 1rem;
+}
+
+.pipeline-item .pi-body .avatar {
+  margin-bottom: auto;
+}
+
+.pipeline-item {
+  border: 1px solid white;
+  -webkit-box-shadow: 0px 0px 30px rgba(69, 101, 173, 0.1);
+  box-shadow: 0px 0px 30px rgba(69, 101, 173, 0.1);
+}
+.full-chat-w .chat-content-w .chat-message .chat-message-content {
+  background-color: #ffebeb;
+}
+.full-chat-w .chat-content-w .chat-content {
+  max-height: 600px !important;
+}

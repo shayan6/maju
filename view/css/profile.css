@@ -1,0 +1,51 @@
+.legend-pin,
+.legend-value {
+  margin-left: 2px;
+  font-size: large;
+}
+.input-group-addon {
+  background-color: #047bf8;
+  color: #ffffff;
+}
+.user-profile .up-main-info {
+  padding: 5%;
+}
+.user-profile .up-main-info .user-avatar-w .user-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+thead tr th:nth-child(1) {
+  width: 0%;
+}
+.table th,
+.table td {
+  padding: 0.8rem 0.4rem;
+}
+button {
+  cursor: pointer;
+}
+.with-errors {
+  color: #f27474;
+  font-size: small;
+}
+.up-sub-header {
+  text-transform: uppercase;
+}
+#updateImage {
+  display: none;
+  position: absolute;
+  width: 114px;
+  height: 16%;
+  background: #00000080;
+  border-bottom-left-radius: 80px;
+  border-bottom-right-radius: 80px;
+  top: 32%;
+  cursor: pointer;
+  color: white;
+  font-size: 15px;
+  font-weight: 500;
+}
+.user-avatar:hover #updateImage {
+  display: block;
+}

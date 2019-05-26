@@ -1,0 +1,307 @@
+/* Required height of parents of the Half Page Carousel for proper displaying carousel itself */
+html,
+body,
+.view {
+  height: 100%; }
+
+@media (max-width: 740px) {
+  .full-page-intro {
+    height: 1000px; } }
+
+/* Half Page Carousel itself*/
+.carousel {
+  height: 50%; }
+  .carousel .carousel-inner {
+    height: 100%; }
+    .carousel .carousel-inner .carousel-item,
+    .carousel .carousel-inner .active {
+      height: 100%; }
+
+/* Adjustment for mobile devices*/
+@media (max-width: 776px) {
+  .carousel {
+    height: 100%; } }
+
+/* Navbar animation */
+.navbar {
+  background-color: rgba(0, 0, 0, 0.2); }
+
+.top-nav-collapse {
+  background-color: #1C2331; }
+
+/* Adding color to the Navbar on mobile */
+@media only screen and (max-width: 768px) {
+  .navbar {
+    background-color: #1C2331; } }
+
+/* Footer color for sake of consistency with Navbar */
+.page-footer {
+  background-color: #1C2331; }
+
+
+  /*Tez Color*/
+  .btn-success {
+    background-color: #3ad18a!important;
+  }
+  .card .card-header-success, .card.bg-success, .card.card-rotate.bg-success .front, .card.card-rotate.bg-success .back {
+      background: linear-gradient(60deg, #3ad18a, #4caf50);
+  }
+
+  /*Button Size*/
+  .btn[class*=btn-outline-] {
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+        font-size: 1.2rem;
+    }
+    
+  /* Financial inclusion section */
+
+    .finc{
+        font-weight: 500;
+        font-size: 20px;
+        /*border-radius: 3%; */
+        padding: 2%;
+        height: 192px;
+        width: 170px;
+        margin: 1%;
+        display: inline-block;
+        box-shadow: 0px 3px 13px rgba(0, 0, 0, 0.3);
+        border: 2px solid white;
+    }
+
+
+    .finc2{
+        /*border-radius: 3%; */
+        height: 192px;
+        width: 170px;
+        margin: 1%;
+        display: inline-block;
+        box-shadow: 0px 3px 13px rgba(0, 0, 0, 0.3);
+        /*border: 2px solid white;*/
+    }
+
+    .finc2 img{
+      height: 100%;
+      width: 100%;
+    }
+
+      /* map section */
+
+      @-webkit-keyframes anim-pulse{
+      0%   { 
+        opacity: 0 ;
+      -webkit-transform : scale(.5);
+        }
+      10% {
+        opacity: 1 ;
+      }
+
+      90% {
+        opacity: 0 ;
+      }
+
+      100% {
+        -webkit-transform : scale(1.25)
+      }
+    }
+    .core {
+      fill:white;
+      opacity: 0;
+    }
+
+    .ring {
+    opacity: 0;
+    stroke: white;
+     -webkit-transform-origin: center;
+     -webkit-animation: anim-pulse 2s 1s infinite;
+     }
+
+    .wrapper {
+      float: left;
+      width: 25%;
+    }
+
+    /* map end */
+
+    /*contact us css start*/
+
+    [class*=contactus-], [class*=features-], [class*=pricing-], [class*=projects-], [class*=team-], [class*=testimonials-] {
+        padding: 80px 0;
+    }
+    .section-dark .card-plain .card-title, .section-dark .card-plain .icon i, .section-dark .title, .section-image .card-plain .card-title, .section-image .card-plain .icon i, .section-image .title {
+          color: #fff;
+      }
+      .section-dark .card-plain .card-description, .section-dark .card-plain .icon, .section-dark .description, .section-image .card-plain .card-description, .section-image .card-plain .icon, .section-image .description {
+          color: hsla(0,0%,100%,.76);
+      }
+      .contactus-1 .info {
+          padding: 0;
+          margin: 0;
+      }
+      .info {
+          max-width: 360px;
+          margin: 0 auto;
+          padding: 70px 0 30px;
+      }
+      .contactus-1 .info .icon {
+          margin-top: 14px;
+          color: #fff;
+      }
+      .contactus-1 .info .info-title {
+          margin-top: 20px;
+          color: #fff;
+      }
+      .form-control, .is-focused .form-control {
+          background-image: linear-gradient(to top, #00c851 2px, rgba(156, 39, 176, 0) 2px), linear-gradient(to top, #d2d2d2 1px, rgba(210, 210, 210, 0) 1px);
+      }
+      .card .card-header-primary, .card.bg-primary, .card.card-rotate.bg-primary .front, .card.card-rotate.bg-primary .back {
+          background: linear-gradient(60deg, rgb(0, 200, 81), #4caf50);
+      }
+      .card .card-header-primary {
+          box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.2), 0 13px 24px -11px rgba(0, 200, 81, 0.6);
+      }
+      /*contact us css end*/
+
+    /***********************
+      CUSTON BTN VALUES Footer
+    ************************/
+
+    .btn {
+        padding: 14px 24px;
+        border: 0 none;
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        line-height: 0 !important;
+      }
+      .btn:focus, .btn:active:focus, .btn.active:focus {
+          outline: 0 none;
+      }
+
+      .box h3{
+          text-align:center;
+          position:relative;
+          top:80px;
+      }
+      .box {
+          width:170px;
+          height:50px !important;
+          margin:20px auto !important;
+      }
+
+      .btn-floating {
+          display: inline-block;
+          color: #fff !important;
+          position: relative;
+          overflow: hidden;
+          z-index: 1;
+          width: 40px;
+          height: 40px;
+          line-height: 40px;
+          padding: 0;
+          text-align: center;
+          background-color: #26a69a;
+          border-radius: 50%;
+          -webkit-transition: background-color .3s;
+          transition: background-color .3s;
+          cursor: pointer;
+          vertical-align: middle;   
+      }
+
+
+    /*footer contact area start*/
+    .footer-contact-area .line-shape {
+        margin-left: 0;
+    }
+
+    .footer-contact-area .heading-text > p {
+        margin-top: 50px;
+    }
+
+    .footer-contact-area .heading-text {
+        margin-bottom: 50px;
+    }
+
+    #name {
+        font-size: 18px;
+        padding: 15px 15px;
+        border-radius: 25px 25px 25px 0;
+    }
+
+    #email {
+        font-size: 18px;
+        padding: 15px 15px;
+        border-radius: 25px 25px 25px 0;
+    }
+
+    #message {
+        border-radius: 25px 25px 25px 0;
+    }
+
+    .btn.submit-btn {
+        background: #00c367;
+        height: 48px;
+        min-width: 185px;
+        color: #ffffff;
+        font-weight: 500;
+        border-radius: 22px 25px 22px 0;
+    }
+
+    .btn.submit-btn:hover {
+        background: #1c6fb5;
+        color: #fff;
+        -webkit-transition-duration: 500ms;
+        -o-transition-duration: 500ms;
+        transition-duration: 500ms;
+    }
+
+    .footer-contact-area {
+      background: rgba(245, 249, 252, 0.5);
+    }
+
+    .footer-text > p {
+        margin-bottom: 10px;
+    }
+
+    /*end contact footer area*/
+
+    .footer-links p{
+      margin: 0px;
+      color: white;
+      font-size: 15px;
+    }
+
+    .footer-links p a,.footer-links h6{
+      color: white;
+    }
+
+    .footer-hr{
+      margin-top: -10px;
+        height: 1px;
+    }
+
+    /*footer manual end*/
+
+    /* contact section*/
+    .footer-img{
+      background-color:rgba(28, 111, 181,0.8);
+      /*border-radius: 3%; */
+      height: 296px;
+      width: 100%;
+      margin: 1%;
+      padding-top: 10%;
+      color: white;
+      font-size: 50px;
+      display: inline-block;
+      /*box-shadow: 0px 3px 13px rgba(0, 0, 0, 0.3);
+      border: 2px solid white;*/
+    }
+    footer {
+        position: relative;
+        width: 100%;
+        padding-bottom: 0px;
+        text-align: center;
+        background-color: #3ad18a;
+        background-image: url(../img/footer-img.png);
+        background-repeat: repeat;
+    }
