@@ -34,21 +34,21 @@
                                  <i class="os-icon os-icon-hamburger-menu-1"></i>
                                  <div class="os-dropdown">
                                      <div class="icon-w">
-                                         <i class="icon-graph"></i>
+                                         <i class="icon-chart"></i>
                                      </div>
                                      <ul>
                                          <li>
-                                             <a class="viewDataTable"><i class="icon-graph"></i><span>View Data Table</span></a>
+                                             <a class="viewDataTableSignup"><i class="icon-chart"></i><span>View Data Table</span></a>
                                          </li>
                                          <li>
-                                             <a id="installEventMonth"><i class="icon-graph"></i><span>View Statistics In Detail</span></a>
+                                             <a id="signupDay"><i class="icon-chart"></i><span>View Statistics In Detail</span></a>
                                          </li>
                                      </ul>
                                  </div>
                              </div>
                          </div>
                          <div class="el-chart-w">
-                             <canvas height="70px" id="stackedChart" width="150px"></canvas>
+                             <canvas height="70px" id="signupChart" width="150px"></canvas>
                          </div>
                      </div>
                  </div>
@@ -85,7 +85,7 @@
                          </div>
                          <div class="row">
                              <div class="el-chart-w col-sm-12">
-                                 <canvas height="144%" id="pieChart"></canvas>
+                                 <canvas height="144%" id="postChart"></canvas>
                              </div><br><br>
                          </div>
                      </div>
@@ -108,14 +108,14 @@
                                  <i class="os-icon os-icon-hamburger-menu-1"></i>
                                  <div class="os-dropdown">
                                      <div class="icon-w">
-                                         <i class="icon-chart"></i>
+                                         <i class="icon-graph"></i>
                                      </div>
                                      <ul>
                                          <li>
-                                             <a class="viewDataTable"><i class="icon-chart"></i><span>View Data Table</span></a>
+                                             <a class="viewDataTable"><i class="icon-graph"></i><span>View Data Table</span></a>
                                          </li>
                                          <li>
-                                             <a id="installEventPie"><i class="icon-chart"></i><span>View Statistics In Detail</span></a>
+                                             <a id="installEventPie"><i class="icon-graph"></i><span>View Statistics In Detail</span></a>
                                          </li>
                                      </ul>
                                  </div>
@@ -123,7 +123,7 @@
                          </div>
                          <div class="row">
                              <div class="el-chart-w col-sm-12">
-                                 <canvas height="144%" id="pieChart"></canvas>
+                                 <canvas height="144%" id="likeChart"></canvas>
                              </div><br><br>
                          </div>
                      </div>
@@ -161,7 +161,7 @@
                          </div>
                          <div class="row">
                              <div class="el-chart-w col-sm-12">
-                                 <canvas height="144%" id="pieChart"></canvas>
+                                 <canvas height="144%" id="commentChart"></canvas>
                              </div><br><br>
                          </div>
                      </div>

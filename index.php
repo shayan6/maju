@@ -26,6 +26,20 @@ $app->get('/selectAll/{report}', function (Request $request, Response $response,
 	}
 });
 
+$app->get('/countChart/{report}/{startDate}/{endDate}/{pageSize}/{pageNo}', function (Request $request, Response $response, array $args) {
+	require_once('api/database.php');
+	require_once('api/variables.php');
+	$reportName = $args['report'];
+	$rows = $db->fetch("SELECT DATE(created_at) as day
+							,count(*) as c
+						FROM `$reportName`
+						WHERE created_at BETWEEN '$startDate' AND '$endDate' 
+						Group by day
+						LIMIT $startPoint , $pageSize");
+	return $response->withJson(array('status' => true, 'row' => $rows, 'message' => ''));
+
+});
+
 $app->get('/users/profile', function (Request $request, Response $response, array $args) {
 	require_once('api/database.php');
 	$rows = $db->fetch("SELECT
