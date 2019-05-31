@@ -1,9 +1,9 @@
 <div class="top-menu-secondary color-scheme-dark">
   <ul>
-    <li class="active">
+    <li class="active home allUploads">
       <a href="#">All</a>
     </li>
-    <li>
+    <li class="myUploads">
       <a href="#">My Uploads</a>
     </li>
   </ul>
@@ -40,11 +40,14 @@
             <i class="os-icon os-icon-wallet-loaded"></i>
           </div>
           <ul>
-            <!-- <li>
-              <a href="#"><i class="os-icon os-icon-others-43"></i><span>Notifications</span></a>
-            </li> -->
             <li>
-              <a href="#"><i class="os-icon os-icon-signs-11"></i><span>Logout</span></a>
+              <a href="#" class="profile"><i class="os-icon os-icon-user-male-circle"></i><span>My Profile</span></a>
+            </li>
+            <li>
+              <a href="#" class="search"><i class="os-icon os-icon-search"></i><span>Search</span></a>
+            </li> 
+            <li>
+              <a href="#" class="logout"><i class="os-icon os-icon-signs-11"></i><span>Logout</span></a>
             </li>
           </ul>
         </div>

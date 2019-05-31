@@ -27,7 +27,7 @@
                     '<div class="tags">'+
                     '<a class="tag" href="./uploads/files/'+ file +'" download="'+ title +'">'+title+'</a>'+
                     '</div>'+
-                    '<a class="extra-info" href="#"><i class="os-icon os-icon-mail-12"></i><span>0 Comments</span></a>'+
+                    '<a class="extra-info" href="#"   onclick=windowLocation(' + id + ') ><i class="os-icon os-icon-mail-12"></i><span>0 Comments</span></a>'+
                     '<a class="extra-info" href="#"><i class="icon-like post-id-'+id+' clap-btn" ></i><span  onclick="allLikes('+id+')" id="post-id-'+id + '"  data-target="#likeModal" data-toggle="modal" > Likes</span></a>'+
                   '</div>'+
                 '</div>'+

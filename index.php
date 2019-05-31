@@ -23,6 +23,16 @@ $app->get('/selectAll/{report}', function (Request $request, Response $response,
 								`like` l
 							GROUP BY l.post_id ORDER BY c DESC LIMIT 1");
 		return $response->withJson(array('status' => true, 'row' => $rows, 'message' => ''));
+	} else if ($dataName == 'postRecent') {
+		$rows = $db->fetch("SELECT p.title
+									,p.id
+									,(SELECT u.name from user u where u.id = p.user_id) as post_by
+									,(SELECT u.image from user u where u.id = p.user_id) as image
+									,(SELECT count(*) from maju_pms.like l where l.post_id = p.id) as numbers_of_likes
+									,p.created_at as post_time
+							FROM post p
+							ORDER BY p.created_at DESC LIMIT 3");
+		return $response->withJson(array('status' => true, 'row' => $rows, 'message' => ''));
 	}
 });
 
@@ -37,7 +47,6 @@ $app->get('/countChart/{report}/{startDate}/{endDate}/{pageSize}/{pageNo}', func
 						Group by day
 						LIMIT $startPoint , $pageSize");
 	return $response->withJson(array('status' => true, 'row' => $rows, 'message' => ''));
-
 });
 
 $app->get('/users/profile', function (Request $request, Response $response, array $args) {
@@ -83,6 +92,19 @@ $app->get('/post/{id}', function (Request $request, Response $response, array $a
 	return $response->withJson(array('status' => true, 'row' => $rows, 'message' => ''));
 });
 
+$app->get('/postsOfUser/{id}', function (Request $request, Response $response, array $args) {
+	require_once('api/database.php');
+
+	$id = $args['id'];
+
+	$rows = $db->fetch("SELECT
+							( SELECT u.`name` FROM `user` u WHERE u.`id` = p.`user_id`) AS name
+							,( SELECT u.`image` FROM `user` u WHERE u.`id` = p.`user_id`) AS image
+							,p.*	
+						FROM `post` p WHERE p.user_id = $id ORDER BY p.created_at DESC");
+	return $response->withJson(array('status' => true, 'row' => $rows, 'message' => ''));
+});
+
 
 $app->get('/like/{post_id}', function (Request $request, Response $response, array $args) {
 	require_once('api/database.php');
@@ -97,7 +119,7 @@ $app->get('/like/{post_id}', function (Request $request, Response $response, arr
 
 
 $app->get('/comments/{parent_comment_id}/{post_id}', function (Request $request, Response $response, array $args) {
-	
+
 	require_once('api/database.php');
 	$parent_comment_id = $args['parent_comment_id'];
 	$post_id = $args['post_id'];
@@ -118,15 +140,15 @@ $app->get('/userPostSearch/{startDate}/{endDate}/{fromLike}/{toLike}/{searchPost
 	//variables mapAll
 	$startDate = date("Y-m-d 00:00:00", strtotime($args['startDate']));
 	$endDate = date("Y-m-d 23:59:59", strtotime($args['endDate']));
-	
+
 	$fromLike = $args['fromLike'];
 	$toLike = $args['toLike'];
-	
+
 	//search post *************************************
-	if($args['searchPost'] == 'false'){
+	if ($args['searchPost'] == 'false') {
 		$searchPost = 1;
-	}else{
-		$searchPost = " `title` LIKE '%".$args['searchPost']."%' OR  `description` LIKE '%".$args['searchPost']."%'";
+	} else {
+		$searchPost = " `title` LIKE '%" . $args['searchPost'] . "%' OR  `description` LIKE '%" . $args['searchPost'] . "%'";
 	}
 
 
@@ -143,7 +165,6 @@ $app->get('/userPostSearch/{startDate}/{endDate}/{fromLike}/{toLike}/{searchPost
 						HAVING likes BETWEEN $fromLike AND $toLike
  						ORDER BY p.created_at DESC");
 	return $response->withJson(array('status' => true, 'row' => $rows, 'message' => ''));
-
 });
 
 
@@ -158,9 +179,9 @@ $app->get('/dataTable/user/{startDate}/{endDate}/{pageSize}/{pageNo}', function 
 						,u.created_at as signup_time
 						FROM user u;
 						WHERE u.created_at BETWEEN '$startDate' AND '$endDate'
+						ORDER BY u.created_at DESC
 						LIMIT $startPoint , $pageSize");
 	return $response->withJson(array('status' => true, 'row' => $rows, 'message' => ''));
-
 });
 
 
@@ -176,18 +197,10 @@ $app->get('/dataTable/post/{startDate}/{endDate}/{pageSize}/{pageNo}', function 
 						,p.created_at as post_time
 						FROM post p
 						WHERE p.created_at BETWEEN '$startDate' AND '$endDate'
+						ORDER BY p.created_at DESC
 						LIMIT $startPoint , $pageSize");
 	return $response->withJson(array('status' => true, 'row' => $rows, 'message' => ''));
-
 });
 
 
 $app->run();
-
-
-
-
-
-
-
-

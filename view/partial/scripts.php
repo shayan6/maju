@@ -56,6 +56,9 @@
   $('.home').on('click', function() {
     window.location.href = 'main.php?startDate=' + querySelector['startDate'] + '&endDate=' + querySelector.endDate + '&location=Home';
   });
+  $('.myUploads').on('click', function() {
+    window.location.href = 'uploads.php?startDate=' + querySelector['startDate'] + '&endDate=' + querySelector.endDate + '&location=Home';
+  });
   $('.profile').on('click', function() {
     window.location.href = 'profile.php?startDate=' + querySelector['startDate'] + '&endDate=' + querySelector.endDate + '&location=Profile';
   });

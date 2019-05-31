@@ -210,6 +210,7 @@
                         showCancelButton: false,
                         showConfirmButton: false
                     });
+                    
                 }
                 $('body').css('padding-right', '15px');
             }

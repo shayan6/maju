@@ -44,6 +44,5 @@
   <!-- other page scripts -->
   <script src='./js/timeline.js'></script>
   <?php include './partial/script-with-php/main-script.php'; ?>
-  <script src='./js/sidebar.js'></script>
 </body>
 </html>

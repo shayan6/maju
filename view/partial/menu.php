@@ -29,7 +29,7 @@
         </a>
       </li>
       <li class="has-sub-menu">
-        <a class="uploads" href="javascript:void(0)">
+        <a class="uploads myUploads" href="javascript:void(0)">
           <div class="icon-w">
             <div class="os-icon os-icon-delivery-box-2"></div>
           </div>
@@ -52,14 +52,14 @@
           <span>Settings</span>
         </a>
       </li>
-      <li class="has-sub-menu">
+      <!-- <li class="has-sub-menu">
         <a href="javascript:void(0)">
           <div class="icon-w">
             <div class="os-icon os-icon-tasks-checked"></div>
           </div>
           <span>Marks</span>
         </a>
-      </li>
+      </li> -->
       <li class="has-sub-menu">
         <a class="logout" href="javascript:void(0)">
           <div class="icon-w">

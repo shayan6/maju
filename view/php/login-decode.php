@@ -41,15 +41,15 @@
                 $_SESSION['full_name'] = $row['name'];
                 $_SESSION['role_name'] = $row['role_name'];
                 $_SESSION['image'] = $row['image'];
-//                 $user_id = $row['id'];
-//                 $sql = "SELECT * FROM user_accesses WHERE user_id = '$user_id'";
+                $user_id = $row['id'];
+                $sql = "SELECT * FROM user_access WHERE user_id = '$user_id'";
               
-//                 $result = mysqli_query( $conn , $sql );
-//                 $_SESSION['access'] = array();
+                $result = mysqli_query( $conn , $sql );
+                $_SESSION['access'] = array();
 
-//                 foreach ($result as $access){ 
-//                   array_push($_SESSION['access'], $access['access_id']);
-//                 } 
+                foreach ($result as $access){ 
+                  array_push($_SESSION['access'], $access['access_id']);
+                } 
 
                 echo "success";
               }
