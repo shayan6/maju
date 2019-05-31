@@ -15,9 +15,9 @@
 	  </div>
 	  <div class="element-wrapper">
 	    <h6 class="element-header">
-	      Your Classmates
+	      Recent Post
 	    </h6>
-	    <div class="element-box-tp">
+	    <div class="element-box-tp" id="recentPost" >
 	      <div class="profile-tile">
 	        <div class="profile-tile-box">
 	          <div class="pt-avatar-w">
@@ -30,43 +30,17 @@
 	        <div class="profile-tile-meta">
 	          <ul>
 	            <li>
-	              Last Login:<strong>Online Now</strong>
+	              Post Time:<strong>Online Now</strong>
 	            </li>
 	            <li>
-	              Tickets:<strong>12</strong>
+	              Title:<strong>12</strong>
 	            </li>
 	            <li>
-	              Response Time:<strong>2 hours</strong>
+	              Likes:<strong>2 hours</strong>
 	            </li>
 	          </ul>
 	          <div class="pt-btn">
-	            <a class="btn btn-success btn-sm" href="#">Send Message</a>
-	          </div>
-	        </div>
-	      </div>
-	      <div class="profile-tile">
-	        <div class="profile-tile-box">
-	          <div class="pt-avatar-w">
-	            <img alt="" src="./uploads/default.jpg">
-	          </div>
-	          <div class="pt-user-name">
-	            Nasir Shah
-	          </div>
-	        </div>
-	        <div class="profile-tile-meta">
-	          <ul>
-	            <li>
-	              Last Login:<strong>Online Now</strong>
-	            </li>
-	            <li>
-	              Tickets:<strong>9</strong>
-	            </li>
-	            <li>
-	              Response Time:<strong>3 hours</strong>
-	            </li>
-	          </ul>
-	          <div class="pt-btn">
-	            <a class="btn btn-secondary btn-sm" href="#">Send Message</a>
+	            <a class="btn btn-success btn-sm" href="#">View Post</a>
 	          </div>
 	        </div>
 	      </div>

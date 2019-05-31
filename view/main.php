@@ -5,10 +5,6 @@
   <?php include 'partial/links.php' ?>
 
   <style>
-    .clap-active{
-      color: #f05152 !important;
-      font-weight: bolder;
-    }
     @media (max-width: 1650px){
       .content-box {
           padding: 2rem 6rem;
@@ -48,6 +44,6 @@
   <!-- other page scripts -->
   <script src='./js/timeline.js'></script>
   <?php include './partial/script-with-php/main-script.php'; ?>
+  <script src='./js/sidebar.js'></script>
 </body>
-
 </html>

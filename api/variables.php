@@ -9,7 +9,7 @@
 		$dayNum = 1;
 	}
 
-	$endDate = date("Y-m-d 00:00:00", strtotime($args['endDate']));
+	$endDate = date("Y-m-d 00:00:00", strtotime($args['endDate'] . '+ 1 days' ));
 	$pageNo = $args['pageNo'];
 	$pageSize = $args['pageSize'];
 	$startPoint = ($pageNo * $pageSize) - $pageSize;

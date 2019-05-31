@@ -6,7 +6,7 @@
   <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous' />
   <style>
     /* like comment CSS ##################################################*/
-    .like-btn,
+    /* .like-btn,
     .clap-btn {
       display: inline-block;
       cursor: pointer;
@@ -57,6 +57,14 @@
     .post-like-count {
       cursor: pointer;
       font-weight: bolder;
+    } */
+    
+    .clap-active{
+      color: #f05152 !important;
+      font-weight: bolder;
+    }
+    .pipeline-item .pi-foot .extra-info{
+      font-size: 0.8rem;
     }
   </style>
 </head>

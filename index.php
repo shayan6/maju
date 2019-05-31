@@ -172,7 +172,8 @@ $app->get('/dataTable/post/{startDate}/{endDate}/{pageSize}/{pageNo}', function 
 						,(SELECT u.name from user u where u.id = p.user_id) as post_by
 						,(SELECT u.maju_id from user u where u.id = p.user_id) as user_id
 						,(SELECT count(*) from maju_pms.like l where l.post_id = p.id) as numbers_of_likes
-						,created_at as post_time
+						,p.post_marks
+						,p.created_at as post_time
 						FROM post p
 						WHERE p.created_at BETWEEN '$startDate' AND '$endDate'
 						LIMIT $startPoint , $pageSize");
@@ -182,46 +183,6 @@ $app->get('/dataTable/post/{startDate}/{endDate}/{pageSize}/{pageNo}', function 
 
 
 $app->run();
-
-
-
-
-// SELECT DATE(created_at) as day
-// 	,count(*) as c
-// FROM user
-// Group by day ;
-
-// SELECT DATE(created_at) as day
-// 	,count(*) as c
-// FROM post
-// Group by day ;
-
-// SELECT DATE(l.created_at) as day
-// 	,count(*) as c
-// FROM maju_pms.like l
-// Group by day ;
-
-
-// SELECT DATE(created_at) as day
-// 	,count(*) as c
-// FROM maju_pms.comment
-// Group by day ;
-
-
-// SELECT u.name
-// ,(SELECT r.role_name from role r where r.id = u.role_id) as role
-// ,maju_id
-// ,created_at as signup_time
-// FROM user u;
-
-
-// SELECT p.title
-// , p.description
-// ,(SELECT u.name from user u where u.id = p.user_id) as post_by
-// ,(SELECT u.maju_id from user u where u.id = p.user_id) as user_id
-// ,(SELECT count(*) from maju_pms.like l where l.post_id = p.id) as numbers_of_likes
-// ,created_at as post_time
-// FROM post p;
 
 
 

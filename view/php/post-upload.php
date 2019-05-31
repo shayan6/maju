@@ -16,7 +16,7 @@ if (isset($_POST)) {
     $teacher_id = filter_var($_POST["teacher_id"], FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH);
     $currentUser = $_SESSION['user_id'];
 
-    $sql = "SELECT id FROM user WHERE maju_id='$teacher_id' LIMIT 1";
+    $sql = "SELECT id FROM user WHERE maju_id='$teacher_id' AND role_id = 2 LIMIT 1";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {

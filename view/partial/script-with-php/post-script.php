@@ -11,46 +11,43 @@
                 title,
                 description,
                 id,
-                file
+                file,
+                teacher_id,
+                post_marks
             } = data.row[i];
+
+            if (teacher_id == <?php echo $_SESSION['user_id'] ?>) {
+                var input = `<div><input id="post_marks" name="post_marks" onblur="assignMarks(${id})" value="${post_marks}" min="10" max="100" required="required" class="form-control" placeholder="Enter Marks..." type="number"></div>`;
+            } else {
+                var input = `<div><input id="post_marks" value="${post_marks}" readonly class="form-control" type="text"></div>`;
+            }
+
             concatActivity +=
-                '<div class="activity-box-w">' +
+                '<div class="activity-box-w pipeline-item" style="box-shadow: 0px 0px 0px white;" >' +
                 '<div class="activity-box"  style="display:flex">' +
                 '<div class="activity-avatar">' +
                 '<img class="img-top" alt="" src="./uploads/' + image + '">' +
                 '</div>' +
                 '<div class="activity-info">' +
-                '<div class="activity-role">' + name + '</div>' +
-                '<strong class="activity-title">' + (title).slice(0, (title).indexOf(".")) + '</strong>' +
+                '<div class="activity-role">' + moment(created_at).format('DD-MMM-YYYY H:m') + '</div>' +
+                '<strong class="activity-title">' + name + '</strong>' +
                 '<p>' + description + '</p>' +
 
                 // file container
-                '<div class="file-container">' +
-                '<a href="./uploads/files/' + file + '" download="' + title + '" class="main-box" style="margin-left: 69px;">' +
-                '<div class="box-content">' +
-                '<div class="svg">' +
-                '<svg width="40" height="30" viewBox="0 0 66 57" fill="none" xmlns="http://www.w3.org/2000/svg">' +
-                '<path d="M2.70977 0H19.4194C20.2733 0 21.0742 0.402215 21.5857 1.08315L25.3821 6.14266C25.8937 6.82361 26.6946 7.22581 27.5484 7.22581H62.3226C63.8185 7.22581 65.0323 8.43956 65.0323 9.93548V53.2903C65.0323 54.7862 63.8185 56 62.3226 56H2.70968C1.21376 56 0 54.7862 0 53.2903V2.70968C0 1.21375 1.21385 0 2.70977 0Z" transform="translate(0.0177612 0.740387)" fill="#4F8AFE"></path>' +
-                '</svg>' +
-                '</div>' +
-                '<div class="text">' +
-                '<p class="title" style="margin-bottom: 0rem;">' + title + '</p>' +
-                '<span>Uploaded At: ' + created_at + '</span>' +
-                '</div>' +
-                '<div class="dots">' +
-                '<div></div>' +
-                '<div></div>' +
-                '<div></div>' +
-                '</div>' +
-                '</div>' +
+                '<a href="./uploads/files/' + file + '" download="' + title + '">' +
+                `<button class="mr-2 mb-2 btn btn-outline-primary" type="button"> <div class="os-icon os-icon-file-text" style="font-size:large"></div>${title}</button>` +
                 '</a>' +
-                '</div>' +
+
                 '</div>' +
                 '</div>' +
                 '<br><br>' +
-                '<div><span class="post-id-' + id + ' clap-btn"></span>' +
-                // likeCount returs likes count and active if post is already liked
-                '<span class="post-like-count" style="vertical-align: super;" data-target="#likeModal" data-toggle="modal" onclick="allLikes(' + id + ')" id="post-id-' + id + '"> LIKE</span></div>' +
+
+                // like comment section
+                `<div class="pi-foot">
+                        <a class="extra-info" href="#"><i class="icon-like post-id-${id} clap-btn"></i><span onclick="allLikes(${id})" id="post-id-${id}" data-target="#likeModal" data-toggle="modal"><b> 0 </b> LIKE</span></a>
+                        <a class="extra-info" href="#comment_content"><i class="os-icon os-icon-mail-12"></i><span>0 Comments</span></a>` +
+                input +
+                `</div>` +
                 '</div>';
             likeCount(id);
         }
@@ -188,4 +185,34 @@
         });
 
     });
+
+
+
+    // functions to give marks #########################################################################################################################
+    function assignMarks(id) {
+        if( +( $('#post_marks').val() ) <= 100 )
+        $.ajax({
+            method: "POST",
+            url: "/maju/view/php/marks.php",
+            data: {
+                id: id,
+                post_marks: $('#post_marks').val()
+            },
+            success: function(data) {
+                console.log(data);
+                if (data.trim() == 'Null') {
+                    Swal('Oops... Somthing Went Wrong', '', 'error');
+                } else {
+                    swalWithBootstrapButtons({
+                        title: "Marks Assigned Successfully",
+                        type: "success",
+                        timer: 1500,
+                        showCancelButton: false,
+                        showConfirmButton: false
+                    });
+                }
+                $('body').css('padding-right', '15px');
+            }
+        });
+    }
 </script>

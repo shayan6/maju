@@ -78,3 +78,8 @@ body:before {
 .full-chat-w .chat-content-w .chat-content {
   max-height: 600px !important;
 }
+/* like active */
+.clap-active{
+  color: #f05152 !important;
+  font-weight: bolder;
+}

@@ -27,6 +27,7 @@
 
 <!-- useful filles -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jsrender/0.9.90/jsrender.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@7"></script>
 
 <script>
   (function(i, s, o, g, r, a, m) {
@@ -72,6 +73,15 @@
 
 <!-- funtions by me #################################################### -->
 <script>
+  // sweet alert
+
+  const swalWithBootstrapButtons = swal.mixin({
+    confirmButtonClass: 'btn btn-success',
+    cancelButtonClass: 'btn btn-danger',
+    buttonsStyling: false,
+  });
+
+
   function genPDF() {
     html2canvas(document.getElementById("HTMLtoPDF"), {
       onrendered: function(canvas) {
