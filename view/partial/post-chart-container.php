@@ -11,11 +11,11 @@
 
     <div class="element-wrapper" id="HTMLtoPDF" style="margin-bottom: 0px; width:100%;">
         <h3 class="element-header">
-            Singup Trend
+            Post Trend
         </h3>
         <div class="element-box">
             <div class="el-chart-w" id="graph-container">
-                <canvas height="40%" id="signupChart" width="100%"></canvas>
+                <canvas height="40%" id="postChart" width="100%"></canvas>
             </div>
         </div>
     </div>

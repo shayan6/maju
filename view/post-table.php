@@ -43,7 +43,30 @@
             <div class="content-w">
                 <!-- header top ################################################################################################### -->
                 <?php include 'partial/header.php' ?>
-                <?php include 'partial/signup-chart-container.php' ?>
+                <div class="content-box">
+                    <div class="control-header">
+                        <div class="row align-items-center">
+                            <div class="col-6">
+                                <?php
+                                include('partial/form/form.php');
+                                ?>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-box element-box table-responsive">
+                        <table class="table table-striped table-lightfont">
+                            <thead>
+                                <tr id="resultHead">
+                                    <th>
+                                        Day
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody id="resultBody">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="display-type"></div>
@@ -52,27 +75,7 @@
     <?php include 'partial/scripts.php' ?>
     <?php include 'partial/script-with-php/exportTableCSV.php' ?>
     <script>
-        $('#signupChart').remove(); // this is my <canvas> element
-        $('#graph-container').append('<canvas height="50px" id="signupChart" width="150px"><canvas>');
-
-        $.get(baseURL + "/countChart/user/" + startDate + "/" + endDate + "/" + 365 + "/" + 1, function(data) {
-
-            if (data.row.length == 0) return;
-            var day = [];
-            var counts = [];
-            var month = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
-                "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
-            ];
-            for (var i = 0; i < data.row.length; i++) {
-                counts.push(+data.row[i].c);
-                day.push(formateDay(data.row[i].day));
-            }
-            <?php include 'partial/charts/signup-chart.js'; ?>
-
-        });
-
-
-        $.get(baseURL + "/dataTable/user/" + startDate + "/" + endDate + "/" + 365 + "/" + 1, function(data) {
+        $.get(baseURL + "/dataTable/post/" + startDate + "/" + endDate + "/" + 365 + "/" + 1, function(data) {
 
             if (data.row.length === 0) {
                 $('#resultBody').empty();

@@ -38,7 +38,7 @@
                                      </div>
                                      <ul>
                                          <li>
-                                             <a class="viewDataTableSignup"><i class="icon-chart"></i><span>View Data Table</span></a>
+                                             <a class="signupTable"><i class="icon-chart"></i><span>View Data Table</span></a>
                                          </li>
                                          <li>
                                              <a id="signupDay"><i class="icon-chart"></i><span>View Statistics In Detail</span></a>
@@ -74,10 +74,10 @@
                                      </div>
                                      <ul>
                                          <li>
-                                             <a class="viewDataTable"><i class="icon-chart"></i><span>View Data Table</span></a>
+                                             <a class="postTable"><i class="icon-chart"></i><span>View Data Table</span></a>
                                          </li>
                                          <li>
-                                             <a id="installEventPie"><i class="icon-chart"></i><span>View Statistics In Detail</span></a>
+                                             <a id="postDay"><i class="icon-chart"></i><span>View Statistics In Detail</span></a>
                                          </li>
                                      </ul>
                                  </div>
@@ -112,10 +112,10 @@
                                      </div>
                                      <ul>
                                          <li>
-                                             <a class="viewDataTable"><i class="icon-graph"></i><span>View Data Table</span></a>
+                                             <a class="likeTable"><i class="icon-graph"></i><span>View Data Table</span></a>
                                          </li>
                                          <li>
-                                             <a id="installEventPie"><i class="icon-graph"></i><span>View Statistics In Detail</span></a>
+                                             <a id="likeDay"><i class="icon-graph"></i><span>View Statistics In Detail</span></a>
                                          </li>
                                      </ul>
                                  </div>
@@ -150,10 +150,10 @@
                                      </div>
                                      <ul>
                                          <li>
-                                             <a class="viewDataTable"><i class="icon-chart"></i><span>View Data Table</span></a>
+                                             <a class="commentTable"><i class="icon-chart"></i><span>View Data Table</span></a>
                                          </li>
                                          <li>
-                                             <a id="installEventPie"><i class="icon-chart"></i><span>View Statistics In Detail</span></a>
+                                             <a id="commentDay"><i class="icon-chart"></i><span>View Statistics In Detail</span></a>
                                          </li>
                                      </ul>
                                  </div>

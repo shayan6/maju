@@ -45,9 +45,9 @@
     .upload-project {
         display: none;
     }
-    
+
     @media (min-width: 1200px) {
-        .post-box{
+        .post-box {
             width: 89%;
             padding: 3%
         }
@@ -65,19 +65,26 @@
                 </div>
                 <div class="upload-project">
                     <div class="row">
-                        <div class="col-sm-10">
+                        <div class="col-sm-12">
                             <div class="input-container">
                                 <input name="file" type="file" id="real-input">
                                 <button class="browse-btn">
                                     Browse Files
                                 </button>
                                 <span class="file-info">Upload a file </span>
+                            </div><br>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label>Teacher Id</label>
+                                <input name="teacher_id" required="required" class="form-control" placeholder="Enter Your Teacher Id..." type="text">
                             </div>
                         </div>
-                        <div class="col-sm-2" style="margin:auto">
-                            <button id="btnPost" class="btn btn-primary btn-lg disabled" type="submit" style="width:100%">
-                                Post
-                            </button>
+                        <div class="col-sm-12" style="margin:auto">
+                            <div class="form-buttons-w"><button id="btnPost" class="btn btn-primary disabled" type="submit"> POST</button></div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div id="msg" style="margin-top:.5rem"></div>
                         </div>
                     </div>
                 </div>
@@ -135,5 +142,4 @@
                 }
             });
     }));
-
 </script>

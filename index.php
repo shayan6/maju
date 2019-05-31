@@ -146,6 +146,41 @@ $app->get('/userPostSearch/{startDate}/{endDate}/{fromLike}/{toLike}/{searchPost
 
 });
 
+
+// charts repports #########################################################################
+
+$app->get('/dataTable/user/{startDate}/{endDate}/{pageSize}/{pageNo}', function (Request $request, Response $response, array $args) {
+	require_once('api/database.php');
+	require_once('api/variables.php');
+	$rows = $db->fetch("SELECT u.name
+						,(SELECT r.role_name from role r where r.id = u.role_id) as role
+						,u.maju_id
+						,u.created_at as signup_time
+						FROM user u;
+						WHERE u.created_at BETWEEN '$startDate' AND '$endDate'
+						LIMIT $startPoint , $pageSize");
+	return $response->withJson(array('status' => true, 'row' => $rows, 'message' => ''));
+
+});
+
+
+$app->get('/dataTable/post/{startDate}/{endDate}/{pageSize}/{pageNo}', function (Request $request, Response $response, array $args) {
+	require_once('api/database.php');
+	require_once('api/variables.php');
+	$rows = $db->fetch("SELECT p.title
+						, p.description
+						,(SELECT u.name from user u where u.id = p.user_id) as post_by
+						,(SELECT u.maju_id from user u where u.id = p.user_id) as user_id
+						,(SELECT count(*) from maju_pms.like l where l.post_id = p.id) as numbers_of_likes
+						,created_at as post_time
+						FROM post p
+						WHERE p.created_at BETWEEN '$startDate' AND '$endDate'
+						LIMIT $startPoint , $pageSize");
+	return $response->withJson(array('status' => true, 'row' => $rows, 'message' => ''));
+
+});
+
+
 $app->run();
 
 

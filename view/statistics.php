@@ -55,8 +55,34 @@
         // window location ########################################################################
         
        $('#signupDay').on('click',function(){
-          window.location.href='signup-day.php?startDate='+querySelector['startDate']+'&endDate='+querySelector.endDate+'&location=Installs Trend';
+          window.location.href='signup-day.php?startDate='+querySelector['startDate']+'&endDate='+querySelector.endDate+'&location=Signups Trend';
         });
+        $('.signupTable').on('click',function(){
+          window.location.href='signup-table.php?startDate='+querySelector['startDate']+'&endDate='+querySelector.endDate+'&location=Signups Trend';
+        });
+        
+       $('#postDay').on('click',function(){
+          window.location.href='post-day.php?startDate='+querySelector['startDate']+'&endDate='+querySelector.endDate+'&location=posts Trend';
+        });
+        $('.postTable').on('click',function(){
+          window.location.href='post-table.php?startDate='+querySelector['startDate']+'&endDate='+querySelector.endDate+'&location=Posts Trend';
+        });
+
+        $('#commentDay').on('click',function(){
+          window.location.href='comment-day.php?startDate='+querySelector['startDate']+'&endDate='+querySelector.endDate+'&location=comments Trend';
+        });
+        $('.commentTable').on('click',function(){
+          window.location.href='comment-table.php?startDate='+querySelector['startDate']+'&endDate='+querySelector.endDate+'&location=Comments Trend';
+        });
+
+        $('#likeDay').on('click',function(){
+          window.location.href='likes-day.php?startDate='+querySelector['startDate']+'&endDate='+querySelector.endDate+'&location=likess Trend';
+        });
+        $('.likeTable').on('click',function(){
+          window.location.href='likes-table.php?startDate='+querySelector['startDate']+'&endDate='+querySelector.endDate+'&location=Comments Trend';
+        });
+
+
 
         //last 10 days ********************************************************************************************************************************
         if (querySelector['startDate'] === 'undefined' || querySelector['startDate'] === undefined || querySelector['endDate'] === 'undefined' || querySelector['endDate'] === undefined) {
