@@ -62,6 +62,9 @@
   $('.profile').on('click', function() {
     window.location.href = 'profile.php?startDate=' + querySelector['startDate'] + '&endDate=' + querySelector.endDate + '&location=Profile';
   });
+  $('.createUser').on('click', function() {
+    window.location.href = 'create-user.php?startDate=' + querySelector['startDate'] + '&endDate=' + querySelector.endDate + '&location=Profile';
+  });
   $('.search').on('click', function() {
     window.location.href = 'search.php?startDate=' + querySelector['startDate'] + '&endDate=' + querySelector.endDate + '&location=Search Post';
   });

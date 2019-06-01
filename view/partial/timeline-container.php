@@ -1,5 +1,4 @@
 <style>
-
 	/* file container */
 
 	@font-face {
@@ -46,7 +45,8 @@
 		font: 16pt FontAwesome;
 		transform: translate(-28px, 7px);
 	}
-/* 
+
+	/* 
 	.text:after {
 		content: '(83.1 kB)';
 		position: absolute;
@@ -83,10 +83,14 @@
 <div class="content-i mainPage">
 	<div class="content-box">
 		<div class="element-wrapper">
-			<h6 class="element-header">
-				Upload A Post
-			</h6>
-			<?php include 'partial/post-upload.php'; ?>
+
+			<!-- if student or admin then  upload required ############# -->
+			<?php if (in_array(2, $_SESSION['access'])) { ?>
+				<h6 class="element-header">
+					Upload A Post
+				</h6>
+				<?php include 'partial/post-upload.php'; ?>
+			<?php } ?>
 			<h6 class="element-header">
 				Timeline
 			</h6>
@@ -98,12 +102,12 @@
 		</div>
 	</div>
 	<!--------------------
-	START - Sidebar
-	-------------------->
+		START - Sidebar
+		-------------------->
 	<?php include 'sidebar.php' ?>
 	<!--------------------
-	END - Sidebar
-	-------------------->
+		END - Sidebar
+		-------------------->
 </div>
 
 

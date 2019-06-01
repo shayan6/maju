@@ -20,6 +20,19 @@
           <span>Profile</span>
         </a>
       </li>
+
+      <?php if (in_array(3, $_SESSION['access'])) { ?>
+        <!-- create user access -->
+        <li class="has-sub-menu">
+          <a class="createUser" href="javascript:void(0)">
+            <div class="icon-w">
+              <div class="os-icon os-icon-users"></div>
+            </div>
+            <span>Create User</span>
+          </a>
+        </li>
+      <?php } ?>
+
       <li class="has-sub-menu">
         <a class="search" href="javascript:void(0)">
           <div class="icon-w">
@@ -28,22 +41,31 @@
           <span>Search</span>
         </a>
       </li>
-      <li class="has-sub-menu">
-        <a class="uploads myUploads" href="javascript:void(0)">
-          <div class="icon-w">
-            <div class="os-icon os-icon-delivery-box-2"></div>
-          </div>
-          <span>My Uploads</span>
-        </a>
-      </li>
-      <li class="has-sub-menu">
-        <a class="statistics" href="javascript:void(0)">
-          <div class="icon-w">
-            <div class="os-icon os-icon-bar-chart-stats-up"></div>
-          </div>
-          <span>Statistics</span>
-        </a>
-      </li>
+
+      <?php if (in_array(2, $_SESSION['access'])) { ?>
+        <!-- upload access -->
+        <li class="has-sub-menu">
+          <a class="uploads myUploads" href="javascript:void(0)">
+            <div class="icon-w">
+              <div class="os-icon os-icon-delivery-box-2"></div>
+            </div>
+            <span>My Uploads</span>
+          </a>
+        </li>
+      <?php } ?>
+
+      <?php if (in_array(1, $_SESSION['access'])) { ?>
+        <!-- stats acces -->
+        <li class="has-sub-menu">
+          <a class="statistics" href="javascript:void(0)">
+            <div class="icon-w">
+              <div class="os-icon os-icon-bar-chart-stats-up"></div>
+            </div>
+            <span>Statistics</span>
+          </a>
+        </li>
+      <?php } ?>
+
       <li class="has-sub-menu">
         <a class="profile" href="javascript:void(0)">
           <div class="icon-w">
@@ -53,13 +75,13 @@
         </a>
       </li>
       <!-- <li class="has-sub-menu">
-        <a href="javascript:void(0)">
-          <div class="icon-w">
-            <div class="os-icon os-icon-tasks-checked"></div>
-          </div>
-          <span>Marks</span>
-        </a>
-      </li> -->
+          <a href="javascript:void(0)">
+            <div class="icon-w">
+              <div class="os-icon os-icon-tasks-checked"></div>
+            </div>
+            <span>Marks</span>
+          </a>
+        </li> -->
       <li class="has-sub-menu">
         <a class="logout" href="javascript:void(0)">
           <div class="icon-w">

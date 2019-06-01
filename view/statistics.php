@@ -23,153 +23,155 @@
     </style>
 </head>
 
-<body>
-    <div class="all-wrapper menu-side">
-        <div class="layout-w">
-            <!--------------------
-        START - Mobile Menu
-        -------------------->
-            <?php include 'partial/mobile-menu.php' ?>
-            <!--------------------
-        END - Mobile Menu
-        -------------------->
-            <!--------------------
-        START - Menu side 
-        -------------------->
-            <?php include 'partial/menu.php' ?>
-            <!--------------------
-        END - Menu side 
-        -------------------->
-            <div class="content-w">
-                <!-- header top ################################################################################################### -->
-                <?php include 'partial/header.php' ?>
-                <?php include 'partial/statistics-container.php' ?>
+<?php if (in_array(1, $_SESSION['access'])) { ?>
+
+    <body>
+        <div class="all-wrapper menu-side">
+            <div class="layout-w">
+                <!--------------------
+            START - Mobile Menu
+            -------------------->
+                <?php include 'partial/mobile-menu.php' ?>
+                <!--------------------
+            END - Mobile Menu
+            -------------------->
+                <!--------------------
+            START - Menu side 
+            -------------------->
+                <?php include 'partial/menu.php' ?>
+                <!--------------------
+            END - Menu side 
+            -------------------->
+                <div class="content-w">
+                    <!-- header top ################################################################################################### -->
+                    <?php include 'partial/header.php' ?>
+                    <?php include 'partial/statistics-container.php' ?>
+                </div>
             </div>
+            <div class="display-type"></div>
         </div>
-        <div class="display-type"></div>
-    </div>
-    <!-- all javascrpts liks ################################################################################################### -->
-    <?php include 'partial/scripts.php' ?>
-    <script>
+        <!-- all javascrpts liks ################################################################################################### -->
+        <?php include 'partial/scripts.php' ?>
+        <script>
+            // window location ########################################################################
 
-        // window location ########################################################################
-        
-       $('#signupDay').on('click',function(){
-          window.location.href='signup-day.php?startDate='+querySelector['startDate']+'&endDate='+querySelector.endDate+'&location=Signups Trend';
-        });
-        $('.signupTable').on('click',function(){
-          window.location.href='signup-table.php?startDate='+querySelector['startDate']+'&endDate='+querySelector.endDate+'&location=Signups Trend';
-        });
-        
-       $('#postDay').on('click',function(){
-          window.location.href='post-day.php?startDate='+querySelector['startDate']+'&endDate='+querySelector.endDate+'&location=posts Trend';
-        });
-        $('.postTable').on('click',function(){
-          window.location.href='post-table.php?startDate='+querySelector['startDate']+'&endDate='+querySelector.endDate+'&location=Posts Trend';
-        });
+            $('#signupDay').on('click', function() {
+                window.location.href = 'signup-day.php?startDate=' + querySelector['startDate'] + '&endDate=' + querySelector.endDate + '&location=Signups Trend';
+            });
+            $('.signupTable').on('click', function() {
+                window.location.href = 'signup-table.php?startDate=' + querySelector['startDate'] + '&endDate=' + querySelector.endDate + '&location=Signups Trend';
+            });
 
-        $('#commentDay').on('click',function(){
-          window.location.href='comment-day.php?startDate='+querySelector['startDate']+'&endDate='+querySelector.endDate+'&location=comments Trend';
-        });
-        $('.commentTable').on('click',function(){
-          window.location.href='comment-table.php?startDate='+querySelector['startDate']+'&endDate='+querySelector.endDate+'&location=Comments Trend';
-        });
+            $('#postDay').on('click', function() {
+                window.location.href = 'post-day.php?startDate=' + querySelector['startDate'] + '&endDate=' + querySelector.endDate + '&location=posts Trend';
+            });
+            $('.postTable').on('click', function() {
+                window.location.href = 'post-table.php?startDate=' + querySelector['startDate'] + '&endDate=' + querySelector.endDate + '&location=Posts Trend';
+            });
 
-        $('#likeDay').on('click',function(){
-          window.location.href='likes-day.php?startDate='+querySelector['startDate']+'&endDate='+querySelector.endDate+'&location=likess Trend';
-        });
-        $('.likeTable').on('click',function(){
-          window.location.href='likes-table.php?startDate='+querySelector['startDate']+'&endDate='+querySelector.endDate+'&location=Comments Trend';
-        });
+            $('#commentDay').on('click', function() {
+                window.location.href = 'comment-day.php?startDate=' + querySelector['startDate'] + '&endDate=' + querySelector.endDate + '&location=comments Trend';
+            });
+            $('.commentTable').on('click', function() {
+                window.location.href = 'comment-table.php?startDate=' + querySelector['startDate'] + '&endDate=' + querySelector.endDate + '&location=Comments Trend';
+            });
+
+            $('#likeDay').on('click', function() {
+                window.location.href = 'likes-day.php?startDate=' + querySelector['startDate'] + '&endDate=' + querySelector.endDate + '&location=likess Trend';
+            });
+            $('.likeTable').on('click', function() {
+                window.location.href = 'likes-table.php?startDate=' + querySelector['startDate'] + '&endDate=' + querySelector.endDate + '&location=Comments Trend';
+            });
 
 
 
-        //last 10 days ********************************************************************************************************************************
-        if (querySelector['startDate'] === 'undefined' || querySelector['startDate'] === undefined || querySelector['endDate'] === 'undefined' || querySelector['endDate'] === undefined) {
+            //last 10 days ********************************************************************************************************************************
+            if (querySelector['startDate'] === 'undefined' || querySelector['startDate'] === undefined || querySelector['endDate'] === 'undefined' || querySelector['endDate'] === undefined) {
 
-            var startDate = moment().subtract(10,'d').format('YYYY-MM-DD 00:00:00');
+                var startDate = moment().subtract(10, 'd').format('YYYY-MM-DD 00:00:00');
 
-        } else {
+            } else {
 
-            var date1 = new Date(startDate);
-            var date2 = new Date(endDate);
-            var timeDiff = Math.abs(date2.getTime() - date1.getTime());
-            var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24)) + 1;
+                var date1 = new Date(startDate);
+                var date2 = new Date(endDate);
+                var timeDiff = Math.abs(date2.getTime() - date1.getTime());
+                var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24)) + 1;
 
-            if (diffDays > 10) {
+                if (diffDays > 10) {
 
-                var startDate = moment(endDate).subtract(10,'d').format('YYYY-MM-DD 00:00:00');
+                    var startDate = moment(endDate).subtract(10, 'd').format('YYYY-MM-DD 00:00:00');
+                }
+
             }
 
-        }
+            $.get(baseURL + "/countChart/user/" + startDate + "/" + endDate + "/" + 10 + "/" + 1, function(data) {
 
-        $.get(baseURL + "/countChart/user/" + startDate + "/" + endDate + "/" + 10 + "/" + 1, function(data) {
+                if (data.row.length == 0) return;
+                var day = [];
+                var counts = [];
+                var month = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+                    "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+                ];
+                for (var i = 0; i < data.row.length; i++) {
+                    counts.push(+data.row[i].c);
+                    day.push(formateDay(data.row[i].day));
+                }
+                //signup chart.js
+                <?php include 'partial/charts/signup-chart.js' ?>
 
-            if (data.row.length == 0) return;
-            var day = [];
-            var counts = [];
-            var month = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
-                "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
-            ];
-            for (var i = 0; i < data.row.length; i++) {
-                counts.push(+data.row[i].c);
-                day.push(formateDay(data.row[i].day));
-            }
-            //signup chart.js
-            <?php include 'partial/charts/signup-chart.js' ?>
-
-        });
-        $.get(baseURL + "/countChart/post/" + startDate + "/" + endDate + "/" + 10 + "/" + 1, function(data) {
+            });
+            $.get(baseURL + "/countChart/post/" + startDate + "/" + endDate + "/" + 10 + "/" + 1, function(data) {
 
 
-            if (data.row.length == 0) return;
+                if (data.row.length == 0) return;
 
-            var day = [];
-            var counts = [];
-            var month = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
-                "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
-            ];
-            for (var i = 0; i < data.row.length; i++) {
-                counts.push(+data.row[i].c);
-                day.push(formateDay(data.row[i].day));
-            }
-            //post chart.js
-            <?php include 'partial/charts/post-chart.js' ?>
+                var day = [];
+                var counts = [];
+                var month = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+                    "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+                ];
+                for (var i = 0; i < data.row.length; i++) {
+                    counts.push(+data.row[i].c);
+                    day.push(formateDay(data.row[i].day));
+                }
+                //post chart.js
+                <?php include 'partial/charts/post-chart.js' ?>
 
-        });
-        $.get(baseURL + "/countChart/like/" + startDate + "/" + endDate + "/" + 10 + "/" + 1, function(data) {
+            });
+            $.get(baseURL + "/countChart/like/" + startDate + "/" + endDate + "/" + 10 + "/" + 1, function(data) {
 
-            if (data.row.length == 0) return;
-            var day = [];
-            var counts = [];
-            var month = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
-                "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
-            ];
-            for (var i = 0; i < data.row.length; i++) {
-                counts.push(+data.row[i].c);
-                day.push(formateDay(data.row[i].day));
-            }
-            //like chart.js
-            <?php include 'partial/charts/like-chart.js' ?>
+                if (data.row.length == 0) return;
+                var day = [];
+                var counts = [];
+                var month = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+                    "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+                ];
+                for (var i = 0; i < data.row.length; i++) {
+                    counts.push(+data.row[i].c);
+                    day.push(formateDay(data.row[i].day));
+                }
+                //like chart.js
+                <?php include 'partial/charts/like-chart.js' ?>
 
-        });
-        $.get(baseURL + "/countChart/comment/" + startDate + "/" + endDate + "/" + 10 + "/" + 1, function(data) {
+            });
+            $.get(baseURL + "/countChart/comment/" + startDate + "/" + endDate + "/" + 10 + "/" + 1, function(data) {
 
-            if (data.row.length == 0) return;
-            var day = [];
-            var counts = [];
-            var month = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
-                "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
-            ];
-            for (var i = 0; i < data.row.length; i++) {
-                counts.push(+data.row[i].c);
-                day.push(formateDay(data.row[i].day));
-            }
-            //comment chart.js
-            <?php include 'partial/charts/comment-chart.js' ?>
+                if (data.row.length == 0) return;
+                var day = [];
+                var counts = [];
+                var month = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+                    "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+                ];
+                for (var i = 0; i < data.row.length; i++) {
+                    counts.push(+data.row[i].c);
+                    day.push(formateDay(data.row[i].day));
+                }
+                //comment chart.js
+                <?php include 'partial/charts/comment-chart.js' ?>
 
-        });
-    </script>
-</body>
+            });
+        </script>
+    </body>
+<?php } ?>
 
 </html>
