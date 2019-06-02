@@ -98,6 +98,9 @@
 				<div class="activity-boxes-w">
 					<!-- Activity jquery fetch -->
 				</div>
+				<div class="activity-box-w text-center">
+					<button class="pipeline-item" id="readMoreTimeLine" onclick="processOnChange(2)">read more</button>
+				</div>
 			</div>
 		</div>
 	</div>
