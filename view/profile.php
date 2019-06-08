@@ -40,7 +40,8 @@
   </div>
   <!-- all javascrpts liks ################################################################################################### -->
   <?php include 'partial/scripts.php'; ?>
-  <?php include 'partial//script-with-php/profile-script.php'; ?>
+  <?php include 'partial/script-with-php/profile-script.php'; ?>
+  <?php include './partial/script-with-php/main-script.php'; ?>
 </body>
 
 </html>

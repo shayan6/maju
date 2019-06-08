@@ -10,7 +10,7 @@
                     padding: 2rem 6rem;
                 }
             }
-
+/* 
             div.pipeline-item {
                 pointer-events: none;
             }
@@ -22,7 +22,7 @@
             div.pipeline-item:hover {
                 background: #f05152b8;
                 color: white;
-            }
+            } */
         </style>
 
     </head>

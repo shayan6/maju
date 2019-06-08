@@ -28,6 +28,8 @@
 <!-- useful filles -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jsrender/0.9.90/jsrender.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>    
+<script src="./js/jspdf.js"></script>
 
 <script>
   (function(i, s, o, g, r, a, m) {

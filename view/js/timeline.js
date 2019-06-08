@@ -20,7 +20,7 @@ function processOnChange(pageNo) {
         name +
         '</div>' +
         '<div class="pi-sub">' +
-        (description).slice(0, 256) + '... <a href="#" onclick=windowLocation(' + id + ') id="readMore">Read More</a>' +
+        (description).slice(0, 256) + '... <a href="javascript:void(0)" onclick=windowLocation(' + id + ') id="readMore">Read More</a>' +
         '</div>' +
         '</div>' +
         '</div>' +
@@ -28,8 +28,8 @@ function processOnChange(pageNo) {
         '<div class="tags">' +
         '<a class="tag" href="./uploads/files/' + file + '" download="' + title + '">' + title + '</a>' +
         '</div>' +
-        '<a class="extra-info" href="#"   onclick=windowLocation(' + id + ') ><i class="os-icon os-icon-mail-12"></i><span>0 Comments</span></a>' +
-        '<a class="extra-info" href="#"><i class="icon-like post-id-' + id + ' clap-btn" ></i><span  onclick="allLikes(' + id + ')" id="post-id-' + id + '"  data-target="#likeModal" data-toggle="modal" > Likes</span></a>' +
+        '<a class="extra-info" href="javascript:void(0)"   onclick=windowLocation(' + id + ') ><i class="os-icon os-icon-mail-12"></i><span>0 Comments</span></a>' +
+        '<a class="extra-info" href="javascript:void(0)"><i class="icon-like post-id-' + id + ' clap-btn" onclick="toggleLike('+ id +')" ></i><span  onclick="allLikes(' + id + ')" id="post-id-' + id + '"  data-target="#likeModal" data-toggle="modal" > Likes</span></a>' +
         '</div>' +
         '</div>' +
 
@@ -39,34 +39,7 @@ function processOnChange(pageNo) {
 
     // activity boxes w ############################################################
     $(".activity-boxes-w").append(concatActivity);
-    //clapp button #################################################################
-    $('.clap-btn').on('click', function () {
-      var that = $(this);
-      var c = $(this).attr('class');
-      var post_id = c.slice(c.indexOf("post-id-") + 8, c.indexOf("clap-btn"));
-      console.log($(this).hasClass('clap-active'))
-
-      // ajax post to add and delete likes in table
-      $.ajax({
-        url: "/maju/view/php/like.php",
-        type: "POST",
-        data: {
-          'post_id': post_id,
-          'like': $(this).hasClass('clap-active')
-        },
-        success: function (data) {
-          if (data == 'inserted') {
-            that.addClass('clap-active');
-          } if (data == 'deleted') {
-            that.removeClass('clap-active');
-          }
-          likeCount(post_id);
-        },
-        error: function (e) {
-          alert('error');
-        }
-      });
-    });
+    
   }).then(function (data) {
     // after fetch request
     $('.file').css({ 'top': 'calc(50% + 15px)', 'opacity': 1 });
@@ -75,3 +48,26 @@ function processOnChange(pageNo) {
 
 }
 processOnChange(1);
+
+function toggleLike(id){
+  // ajax post to add and delete likes in table
+  $.ajax({
+    url: "/maju/view/php/like.php",
+    type: "POST",
+    data: {
+      'post_id': id,
+      'like': $('.post-id-'+id).hasClass('clap-active')
+    },
+    success: function (data) {
+      if (data == 'inserted') {
+        $('.post-id-'+id).addClass('clap-active');
+      } if (data == 'deleted') {
+        $('.post-id-'+id).removeClass('clap-active');
+      }
+      likeCount(id);
+    },
+    error: function (e) {
+      alert('error');
+    }
+  });
+}
