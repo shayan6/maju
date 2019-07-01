@@ -2,16 +2,19 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
 <style>
-    .chat-content{
+    .chat-content {
         padding: 0 !important;
     }
+
     .full-chat-w .chat-content-w {
         height: 60vh;
     }
+
     .btn-white {
         background: white;
     }
-    .img-top{
+
+    .img-top {
         width: 6vW;
         border-radius: 50%;
         margin-right: 30px;
@@ -41,7 +44,22 @@
                             </div>
                             <form method="POST" id="comment_form">
                                 <div class="chat-controls">
-                                    <div class="chat-input"><input name="comment_content" id="comment_content" placeholder="Type your comment here..." type="text"></div>
+                                    <div class="chat-input">
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <input name="comment_content" id="comment_content" placeholder="Type your comment here..." type="text"></div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label for=""></label>
+                                                    <select class="form-control" name="comment_type" id="comment_type" required="required" data-error="Please Select A User comment_type From List">
+                                                        <option value="1">Positive Point</option>
+                                                        <option value="2">Negative Point</option>
+                                                    </select>
+                                                    <div class="help-block with-errors"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <div class="chat-input-extra">
                                         <div class="chat-btn"><input type="submit" name="submit" id="submit" class="btn btn-info" value="Submit" /></div>
                                     </div>

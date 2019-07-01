@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 use \Psr\Http\Message\ServerRequestInterface as Request;
 use \Psr\Http\Message\ResponseInterface as Response;
 
@@ -142,7 +143,7 @@ if (isset($_SESSION['loggedIn'])) {
 	});
 
 	// search filters ##############################################################################
-	$app->get('/userPostSearch/{startDate}/{endDate}/{fromLike}/{toLike}/{searchPost}', function (Request $request, Response $response, array $args) {
+	$app->get('/userPostSearch/{startDate}/{endDate}/{fromLike}/{toLike}/{searchPost}/{userComment}', function (Request $request, Response $response, array $args) {
 		require_once('api/database.php');
 		//variables mapAll
 		$startDate = date("Y-m-d 00:00:00", strtotime($args['startDate']));
@@ -158,19 +159,29 @@ if (isset($_SESSION['loggedIn'])) {
 			$searchPost = " `title` LIKE '%" . $args['searchPost'] . "%' OR  `description` LIKE '%" . $args['searchPost'] . "%'";
 		}
 
+		//comment post *************************************
+		if ($args['userComment'] == 'All') {
+			$userComment = 'ORDER BY p.created_at DESC';
+		} else if ($args['userComment'] == '+ve') {
+			$userComment = 'ORDER BY positive_comments DESC, negative_comments ASC';
+		} else if ($args['userComment'] == '-ve') {
+			$userComment = 'ORDER BY negative_comments DESC, positive_comments ASC';
+		}
 
 		$rows = $db->fetch("SELECT
 							 (SELECT u.`name` FROM `user` u WHERE u.`id` = p.`user_id`) AS name
 							,( SELECT u.`image` FROM `user` u WHERE u.`id` = p.`user_id`) AS image
 							,(SELECT COUNT(*) FROM `like` l WHERE l.`post_id` = p.`id`) AS likes
 							,(SELECT COUNT(*) FROM `comment` c WHERE c.`post_id` = p.`id`) AS comments
+							,(SELECT COUNT(comment_type_id) FROM `comment` c WHERE c.`post_id` = p.`id` AND comment_type_id = '1') AS positive_comments
+							,(SELECT COUNT(comment_type_id) FROM `comment` c WHERE c.`post_id` = p.`id` AND comment_type_id = '2') AS negative_comments
 							,p.*	
 						FROM `post` p 
 						WHERE 
 							p.created_at BETWEEN '$startDate' AND '$endDate'
 							AND $searchPost 
 						HAVING likes BETWEEN $fromLike AND $toLike
- 						ORDER BY p.created_at DESC");
+						$userComment");
 		return $response->withJson(array('status' => true, 'row' => $rows, 'message' => ''));
 	});
 

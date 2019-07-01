@@ -1,4 +1,18 @@
 <script>
+  // ON CLick button Triggered ***********************************************************************************************************************
+  function onMe(idThis, id) {
+
+    $(id + ' .btn-toggled').removeClass('on');
+    $(id + ' .btn-toggled').addClass('off');
+    $(idThis).removeClass('off');
+    $(idThis).addClass('on');
+
+    //cal all functions to get values
+    // $('#filter-loader').show();
+    ProcessOnChange(); //
+
+  }
+
   $(function() {
 
     // date range #############################################################################
@@ -52,8 +66,8 @@
       });
 
     }).then(function(data) {
-        //calender whcich will also call process on change
-        cb(start, end);
+      //calender whcich will also call process on change
+      cb(start, end);
     });
   });
 
@@ -74,37 +88,50 @@
     var searchPost = $('#user_post').val().trim();
     searchPost = searchPost == '' ? false : searchPost;
 
+    var userComment = $('#userComment .on').text();
+
+    console.log(userComment);
+
     //search post #########################################################################
-    $.get(baseURL + "/userPostSearch/" + startDate + "/" + endDate + "/" + fromLike + "/" + toLike + "/" + searchPost, function(data) {
+    $.get(baseURL + "/userPostSearch/" + startDate + "/" + endDate + "/" + fromLike + "/" + toLike + "/" + searchPost + "/" + userComment, function(data) {
 
       var concatActivity = '';
       for (var i = 0; i < data.row.length; i++) {
-        let {created_at, image, name, title, description, id, likes,comments} = data.row[i];
-        concatActivity += 
-              '<div class="col-12 col-sm-6">'+
-                '<div class="pipeline-item">'+
-                  '<div class="pi-body">'+
-                    '<div class="avatar">'+
-                      '<img alt="" src="./uploads/'+image+'">'+
-                    '</div>'+
-                    '<div class="pi-info">'+
-                      '<div class="h6 pi-name">'+
-                        name +
-                      '</div>'+
-                      '<div class="pi-sub">'+
-                        (description).slice(0,256) + '...' +
-                      '</div>'+
-                    '</div>'+
-                  '</div>'+
-                  '<div class="pi-foot">'+
-                    '<div class="tags">'+
-                      '<a class="tag" href="#"  onclick=windowLocation('+id+')>Read More</a>'+
-                    '</div>'+
-                    '<a class="extra-info" href="#"><i class="os-icon os-icon-mail-12"></i><span>'+comments+'Comments</span></a>'+
-                    '<a class="extra-info" href="#"><i class="icon-like"></i><span>'+likes+' Likes</span></a>'+
-                  '</div>'+
-                '</div>'+
-              '</div>';
+        let {
+          created_at,
+          image,
+          name,
+          title,
+          description,
+          id,
+          likes,
+          comments
+        } = data.row[i];
+        concatActivity +=
+          '<div class="col-12 col-sm-6">' +
+          '<div class="pipeline-item">' +
+          '<div class="pi-body">' +
+          '<div class="avatar">' +
+          '<img alt="" src="./uploads/' + image + '">' +
+          '</div>' +
+          '<div class="pi-info">' +
+          '<div class="h6 pi-name">' +
+          name +
+          '</div>' +
+          '<div class="pi-sub">' +
+          (description).slice(0, 256) + '...' +
+          '</div>' +
+          '</div>' +
+          '</div>' +
+          '<div class="pi-foot">' +
+          '<div class="tags">' +
+          '<a class="tag" href="#"  onclick=windowLocation(' + id + ')>Read More</a>' +
+          '</div>' +
+          '<a class="extra-info" href="#"><i class="os-icon os-icon-mail-12"></i><span>' + comments + 'Comments</span></a>' +
+          '<a class="extra-info" href="#"><i class="icon-like"></i><span>' + likes + ' Likes</span></a>' +
+          '</div>' +
+          '</div>' +
+          '</div>';
       }
       $("#searchPost").html(concatActivity);
 

@@ -46,6 +46,21 @@
                 <i class="os-icon-minus os-icon"></i>
             </div>
             <h6 class="filter-header">
+                Comments
+            </h6>
+            <div class="filter-body">
+                <div class="toggled-buttons" id="userComment">
+                    <a class="btn btn-toggled on" href="javascript:void(0)" onclick="onMe(this,`#userComment`)">All</a>
+                    <a class="btn btn-toggled off" href="javascript:void(0)" onclick="onMe(this,`#userComment`)">+ve</a>
+                    <a class="btn btn-toggled off" href="javascript:void(0)" onclick="onMe(this,`#userComment`)">-ve</a>
+                </div>
+            </div>
+        </div>
+        <div class="filter-w">
+            <div class="filter-toggle">
+                <i class="os-icon-minus os-icon"></i>
+            </div>
+            <h6 class="filter-header">
                 Search Post
             </h6>
             <div class="filter-body">

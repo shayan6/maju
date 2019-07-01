@@ -27,7 +27,7 @@
   <div class="all-wrapper menu-side with-pattern">
     <div class="auth-box-w">
       <div class="logo-w">
-        <a href="index.html"><img alt="" class="majuLogo" src="img/maju_logo.png"></a>
+        <a href="login.php"><img alt="" class="majuLogo" src="img/maju_logo.png"></a>
       </div>
       <h4 class="auth-header">
         Login Form

@@ -101,11 +101,13 @@
             event.preventDefault();
             var parent_comment_id = $('#parent_comment_id').val();
             var comment_content = $('#comment_content').val();
+            var comment_type = $('#comment_type').val();
             var post_id = $('#post_id').val();
 
             console.log({
                 parent_comment_id,
                 comment_content,
+                comment_type,
                 post_id
             });
 
@@ -116,6 +118,7 @@
                     data: {
                         parent_comment_id,
                         comment_content,
+                        comment_type,
                         post_id
                     },
                     success: function(data) {
