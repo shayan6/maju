@@ -124,6 +124,14 @@ if (isset($_SESSION['loggedIn'])) {
 						FROM `like` l WHERE l.post_id = $post_id");
 		return $response->withJson(array('status' => true, 'row' => $rows, 'message' => ''));
 	});
+	$app->get('/comments/{post_id}', function (Request $request, Response $response, array $args) {
+		require_once('api/database.php');
+		$post_id = $args['post_id'];
+		$rows = $db->fetch("SELECT 
+						*
+						FROM `comment` l WHERE l.post_id = $post_id");
+		return $response->withJson(array('status' => true, 'row' => $rows, 'message' => ''));
+	});
 
 
 	$app->get('/comments/{parent_comment_id}/{post_id}', function (Request $request, Response $response, array $args) {

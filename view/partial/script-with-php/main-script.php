@@ -10,6 +10,13 @@
             }
         });
     }
+    function commentCount(post_id){
+        $.get(baseURL + "/comments/"+post_id, function(data) {
+            // check by session id will be #####################
+            $('#comments-id-'+post_id).html(`<b> ${data.row.length} </b> Comments`);
+            console.log(data.row)
+        });
+    }
     function allLikes(post_id){
         $.get(baseURL + "/like/"+post_id, function(data) {
             var concatString = ''

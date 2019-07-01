@@ -28,13 +28,14 @@ function processOnChange(pageNo) {
         '<div class="tags">' +
         '<a class="tag" href="./uploads/files/' + file + '" download="' + title + '">' + title + '</a>' +
         '</div>' +
-        '<a class="extra-info" href="javascript:void(0)"   onclick=windowLocation(' + id + ') ><i class="os-icon os-icon-mail-12"></i><span>0 Comments</span></a>' +
+        '<a class="extra-info" href="javascript:void(0)"   onclick=windowLocation(' + id + ') ><i class="os-icon os-icon-mail-12"></i><span id="comments-id-' + id + '">0 Comments</span></a>' +
         '<a class="extra-info" href="javascript:void(0)"><i class="icon-like post-id-' + id + ' clap-btn" onclick="toggleLike('+ id +')" ></i><span  onclick="allLikes(' + id + ')" id="post-id-' + id + '"  data-target="#likeModal" data-toggle="modal" > Likes</span></a>' +
         '</div>' +
         '</div>' +
 
         '</div>';
       likeCount(id);
+      commentCount(id);
     }
 
     // activity boxes w ############################################################

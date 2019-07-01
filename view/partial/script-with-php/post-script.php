@@ -45,11 +45,12 @@
                 // like comment section
                 `<div class="pi-foot">
                         <a class="extra-info" href="#"><i class="icon-like post-id-${id} clap-btn"></i><span onclick="allLikes(${id})" id="post-id-${id}" data-target="#likeModal" data-toggle="modal"><b> 0 </b> LIKE</span></a>
-                        <a class="extra-info" href="#comment_content"><i class="os-icon os-icon-mail-12"></i><span>0 Comments</span></a>` +
+                        <a class="extra-info" href="#comment_content"><i class="os-icon os-icon-mail-12"></i><span id="comments-id-${id}" >0 Comments</span></a>` +
                 input +
                 `</div>` +
                 '</div>';
             likeCount(id);
+            commentCount(id);
         }
 
         // activity boxes w ############################################################
